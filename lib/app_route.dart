@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:new_e_commerece_app/constants/srtings.dart';
+import 'package:new_e_commerece_app/core/presentation/screens/home_page/home_screen.dart';
 import 'package:new_e_commerece_app/core/presentation/screens/user_screen.dart';
+import 'package:new_e_commerece_app/features/app_on_boarding/presentation/on_boarding_screen.dart';
 import 'package:new_e_commerece_app/features/auth/data/repositories/auth_repo_imp.dart';
 import 'package:new_e_commerece_app/features/auth/presentation/pages/login_screen/login_screen.dart';
 import 'package:new_e_commerece_app/features/splash_screen/peresntation/splash_screen.dart';
@@ -18,9 +20,9 @@ class AppRoute {
   Route? generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case splashScreen:
-        return MaterialPageRoute(builder: (context) => SplashScreen());
+        return MaterialPageRoute(builder: (context) => const SplashScreen());
       case welcomeScreen:
-        return MaterialPageRoute(builder: (context) => WelcomeScreen());
+        return MaterialPageRoute(builder: (context) => const WelcomeScreen());
       case signUpScreen:
         return MaterialPageRoute(
             builder: (context) => BlocProvider(
@@ -41,6 +43,14 @@ class AppRoute {
                   create: (context) => AuthBloc(authRepoImpl: authRepo),
                   child: UserScreen(user: user),
                 ));
+
+      case onBoardingScreen:
+        return MaterialPageRoute(
+          builder: ((context) => OnBoardingScreen()),
+        );
+
+      case homeScreen:
+        return MaterialPageRoute(builder: ((context) => HomeScreen()));
     }
   }
 }

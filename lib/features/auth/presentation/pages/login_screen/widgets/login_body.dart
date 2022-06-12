@@ -74,13 +74,15 @@ class _LoginBodyState extends State<LoginBody> {
             FilledButton(
                 text: 'Login',
                 onPressed: () async {
-                  user = Users(
+                  /* user = Users(
                     email: email.text,
                     password: password.text,
                   );
                   BlocProvider.of<AuthBloc>(context)
                       .add(LoginWithEmailAndPassword(user: user!));
-                  print('${user!.email} / ${user!.password}');
+                  print('${user!.email} / ${user!.password}');*/
+
+                  Navigator.pushNamed(context, onBoardingScreen);
                 }),
             const SizedBox(
               height: 20,

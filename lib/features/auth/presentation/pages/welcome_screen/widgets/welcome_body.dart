@@ -14,7 +14,8 @@ class WelcomeBody extends StatelessWidget {
       children: [
         Expanded(
           child: Container(
-            decoration: BoxDecoration(
+            height: SizeConfig.screenHeight! - 50,
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 fit: BoxFit.cover,
                 image: AssetImage(
@@ -28,7 +29,7 @@ class WelcomeBody extends StatelessWidget {
                 Positioned(
                   left: 0,
                   right: 0,
-                  top: SizeConfig.defaultSize! + 220,
+                  top: SizeConfig.screenHeight! / 3,
                   child: Image.asset('assets/images/logo.png'),
                 ),
               ],
